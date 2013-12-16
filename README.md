@@ -79,6 +79,9 @@ These are the steps to get get a mounted shared folder working.
 
 Troubleshooting
 --
+
+Make sure you're up to date with Vagrant, Virtualbox etc.
+
 Guest additions versions can cause issues with shared folders working properly so if you get mount related errors when you run vagrant up
 Run this in the guest VM
 
@@ -97,6 +100,24 @@ vagrant up failed, /dev/vboxnetctl: no such file or directory
 
     Follow these instructions http://stackoverflow.com/questions/18149546/vagrant-up-failed-dev-vboxnetctl-no-such-file-or-directory
 
+
+Sequel Pro
+--
+
+BOA sets up Chive by default but it is a real pain. It's much nicer to user [Sequel Pro](http://www.sequelpro.com/)
+
+There is an SSH Connetion tab you can use to connect from your host right into your vagrant box:
+
+    Name: Aegir Local
+    MySQL Host: 127.0.0.1
+    username: reoctopus
+    Password: (get this from the file at /data/disk/reoctopus/reoctopus.pass.txt)
+    Database: 
+    Post: 3306
+
+    SSH Host: 192.168.10.88 (or whatever IP you have in your Vagrant File)
+    SSH User: vagrant
+    SSH Password: vagrant (unless you've changed it.)
 
 
 Remote import
